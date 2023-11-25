@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.cpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 17:15:21 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/24 02:10:54 by zsyyida          ###   ########.fr       */
+/*   Created: 2023/11/23 21:52:15 by zsyyida           #+#    #+#             */
+/*   Updated: 2023/11/25 02:22:37 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+// #ifndef C_HPP
+// #define C_HPP
 
-Base::~Base()
-{
-    std::cout << "Base destructor called" << std::endl;
-}
+// #include "Base.hpp"
+
+// class C : virtual public Base
+// {
+    
+// };
+
+// #endif

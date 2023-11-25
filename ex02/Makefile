@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+         #
+#    By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 17:14:37 by zsyyida           #+#    #+#              #
-#    Updated: 2023/11/21 17:16:21 by zsyyida          ###   ########.fr        #
+#    Updated: 2023/11/25 02:16:48 by zsyyida          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,17 +17,24 @@ CXX = c++
 
 RM = rm -rf
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-#-fsanitize=address
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 SRCS = main.cpp Base.cpp
 
+INCLUDE =  Base.hpp A.hpp B.hpp C.hpp
+
 OBJS := $(SRCS:.cpp=.o)
 
-all: $(NAME)
+# adding Makefile triggers a rebuild if change in Makefile
+all: $(NAME) Makefile
 
-$(NAME): $(OBJS)
+# .c.o:	${CC} ${CFLAGS} -I -c $< -o ${<:.cpp=.o}
+%.o: %.cpp $(INCLUDE)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(NAME): $(OBJS) $(INCLUDE)
 	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
 
 clean:
 	$(RM) $(OBJS)

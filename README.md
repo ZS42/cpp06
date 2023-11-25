@@ -238,3 +238,10 @@ https://www.codeproject.com/Articles/824516/Concept-of-NaN-IND-INF-and-DEN
 https://www.tutorialspoint.com/cplusplus/cpp_overloading.html
 
 https://www.oreilly.com/library/view/understanding-and-using/9781449344535/ch01.html
+
+######################################################
+Dynamic casting
+https://www.youtube.com/watch?v=CiHfz6pTolQ
+#####################################################
+Static Cast and Reinterpret casting
+https://www.youtube.com/watch?v=pWZS1MtxI-A

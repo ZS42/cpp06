@@ -1,11 +1,10 @@
-NAME = cast
+NAME = convert
 
 CXX = c++
 
 RM = rm -rf
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-#-fsanitize=address
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 SRCS = main.cpp ScalarConverter.cpp
 
