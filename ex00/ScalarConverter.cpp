@@ -6,7 +6,7 @@
 /*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 17:14:42 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/25 00:49:13 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/26 18:00:51 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,18 @@ ScalarConverter::~ScalarConverter()
 // use static storage class only in class definition
 void ScalarConverter::convert(std::string literal)
 {
-	char charValue= static_cast<char>(literal);
-	int intValue= static_cast<int>(literal);
-	float floatValue= static_cast<float>(literal);
-	double doubleValue = static_cast<double>(literal);
+	char charValue = '\0';
+	int intValue = 0;
+	float floatValue = 0.0;
+	double doubleValue = 0.0;
+
+	if (check_is_char(literal, charValue))
+		return ;
+	if (check_is_int(literal, intValue, floatValue, doubleValue))
+		return ;
+	if (check_is_float(literal, intValue, floatValue, doubleValue))
+		return ;
+	if (check_is_double(literal, intValue, floatValue, doubleValue))
+		return ;
+	std::cout << RED << "Literal is not a char or an int or a float or a double" << RESET << std::endl;	
 }

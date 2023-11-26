@@ -6,7 +6,7 @@
 /*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 17:14:47 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/25 02:46:40 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/25 18:23:02 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,16 @@
 
 #pragma once
 
-# define RED_LIGHT "\033[1;38:5:131m"
 # define RED "\033[0;31m"
 # define GREEN "\033[38:5:2m"
-# define GREEN_OLIVE "\033[1;38:5:107m"
-# define GREEN_LIGHT "\033[1;38:5:150m"
-# define MUSTARD "\033[38:5:136m"
+# define BLUE    "\033[34m"
 # define RESET "\033[0m"
 
 #include <iostream>
 #include <cstring>
-#include <cmath>
+// #include <cmath>
+#include <iomanip> // for std::fixed and std::setprecision 
+#include <stdlib.h> // for atoi
 
 // put all constructors destructors private so can't instantiate
 class ScalarConverter
@@ -45,3 +44,8 @@ class ScalarConverter
 	public:
 		static void convert(std::string literal);
 };
+
+bool check_is_char(std::string literal, char charValue);
+bool check_is_int(std::string literal, int intValue, float floatValue, double doubleValue);
+bool check_is_float(std::string literal, int intValue, float floatValue, double doubleValue);
+bool check_is_double(std::string literal, int intValue, float floatValue, double doubleValue);
